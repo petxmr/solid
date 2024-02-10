@@ -1,11 +1,11 @@
 --!nostrict
 
-local make = require(script.Parent.make)
+local bake = require(script.Parent.bake)
 
 function render(instance: Instance, root: Instance?)
     local _root = nil
     if root == nil then
-        _root = make "ScreenGui" {
+        _root = bake "ScreenGui" {
             Name = "MonsoonRoot",
             Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"),
         }
