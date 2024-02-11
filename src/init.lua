@@ -5,4 +5,5 @@ return {
     render = require(script.core.render),
     createSignal = require(script.core.createSignal),
     createEffect = require(script.core.createEffect),
+    onMount = require(script.life.onMount),
 }

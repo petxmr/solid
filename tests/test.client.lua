@@ -6,12 +6,18 @@ local render = solid.render
 local createSignal = solid.createSignal
 local createEffect = solid.createEffect
 
+local onMount = solid.onMount
+
 local count, setCount = createSignal(0)
 
 createEffect(function(v)
     print("Count is:", v)
 end, count)
 
+onMount(function()
+    print("App has been successfully mounted!")
+end)
+    
 local function App()
     return bake "ScreenGui" {
         Name = "App",
@@ -34,9 +40,7 @@ local function App()
                 setCount(count() + 1)
             end,
 
-            bake "UICorner" {
-                CornerRadius = UDim.new(0, 6),
-            }
+            bake "UICorner" { CornerRadius = UDim.new(0, 6), }
         }
     }
 end
