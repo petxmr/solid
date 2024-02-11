@@ -46,7 +46,7 @@ local defaultProperties = {
     },
 }
 
-function bake(className: string)
+function bake<T>(className: string | T)
     return function(properties): Instance
         local passed, instance = pcall(Instance.new, className)
         assert(passed, `Failed to create instance of class '{className}'`)
